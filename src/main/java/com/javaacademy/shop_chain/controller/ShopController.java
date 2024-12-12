@@ -5,6 +5,7 @@ import com.javaacademy.shop_chain.dto.UpdateGoodPriceDto;
 import com.javaacademy.shop_chain.service.ShopService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +23,7 @@ public class ShopController {
         return shopService.findByName(name);
     }
 
-    @PostMapping("/new-price")
+    @PatchMapping
     public void updatePrice(@RequestBody UpdateGoodPriceDto dto) {
         shopService.updateGoodPrice(dto);
     }

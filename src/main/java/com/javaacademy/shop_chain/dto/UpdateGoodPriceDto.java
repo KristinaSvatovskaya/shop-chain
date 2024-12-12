@@ -1,16 +1,18 @@
 package com.javaacademy.shop_chain.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 import java.math.BigDecimal;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class UpdateGoodPriceDto {
-    @NonNull
     private String name;
-    @NonNull
+    @JsonProperty("new_price")
     private BigDecimal newPrice;
 }

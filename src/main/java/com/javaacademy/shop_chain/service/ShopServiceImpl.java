@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 import static com.javaacademy.shop_chain.dto.ShopStatus.CLOSED;
 import static com.javaacademy.shop_chain.dto.ShopStatus.WORK;
@@ -34,13 +35,13 @@ public class ShopServiceImpl implements ShopService {
 
     @Override
     public void updateGoodPrice(UpdateGoodPriceDto dto) {
-        Good good = goodRepository.findFirstByName(dto.getName()).orElseThrow();
+        Good good = goodRepository.findFirstByName(dto.getName().toLowerCase(Locale.ROOT)).orElseThrow();
         good.setPrice(dto.getNewPrice());
     }
 
     @Override
     public GoodDto findByName(String name) {
-        return goodRepository.findFirstByName(name).map(goodMapper::convertToDto).orElseThrow();
+        return goodRepository.findFirstByName(name.toLowerCase(Locale.ROOT)).map(goodMapper::convertToDto).orElseThrow();
     }
 
     @Override
