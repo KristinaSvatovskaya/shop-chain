@@ -1,0 +1,6 @@
+shop:
+  name: "Девяточка"
+  time-open: "09:00"
+  time-close: "18:00"
+server:
+  port: 8082
