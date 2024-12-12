@@ -17,7 +17,6 @@ import java.util.Locale;
 
 import static com.javaacademy.shop_chain.dto.ShopStatus.CLOSED;
 import static com.javaacademy.shop_chain.dto.ShopStatus.WORK;
-import static java.time.LocalTime.from;
 import static java.time.LocalTime.parse;
 import static java.time.format.DateTimeFormatter.ofPattern;
 
